@@ -31,9 +31,13 @@ G_BEGIN_DECLS
 #define POPPLER_IS_MOVIE(obj)                (G_TYPE_CHECK_INSTANCE_TYPE ((obj), POPPLER_TYPE_MOVIE))
 
 
+POPPLER_GLIB_EXPORT
 GType        poppler_movie_get_type      (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 const gchar *poppler_movie_get_filename  (PopplerMovie *poppler_movie);
+POPPLER_GLIB_EXPORT
 gboolean     poppler_movie_need_poster   (PopplerMovie *poppler_movie);
+POPPLER_GLIB_EXPORT
 gboolean     poppler_movie_show_controls (PopplerMovie *poppler_movie);
 
 G_END_DECLS

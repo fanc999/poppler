@@ -299,16 +299,22 @@ union _PopplerAction
 #define POPPLER_TYPE_ACTION             (poppler_action_get_type ())
 #define POPPLER_ACTION(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), POPPLER_TYPE_ACTION, PopplerAction))
 
+POPPLER_GLIB_EXPORT
 GType          poppler_action_get_type (void) G_GNUC_CONST;
 
+POPPLER_GLIB_EXPORT
 void           poppler_action_free     (PopplerAction *action);
+POPPLER_GLIB_EXPORT
 PopplerAction *poppler_action_copy     (PopplerAction *action);
 
 
 #define POPPLER_TYPE_DEST              (poppler_dest_get_type ())
+POPPLER_GLIB_EXPORT
 GType          poppler_dest_get_type   (void) G_GNUC_CONST;
 
+POPPLER_GLIB_EXPORT
 void           poppler_dest_free       (PopplerDest   *dest);
+POPPLER_GLIB_EXPORT
 PopplerDest   *poppler_dest_copy       (PopplerDest   *dest);
 
 G_END_DECLS

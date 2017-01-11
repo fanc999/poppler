@@ -167,147 +167,223 @@ typedef enum /*< flags >*/
 
 
 
+POPPLER_GLIB_EXPORT
 GType              poppler_document_get_type               (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerDocument   *poppler_document_new_from_file          (const char      *uri,
 							    const char      *password,
 							    GError         **error);
+POPPLER_GLIB_EXPORT
 PopplerDocument   *poppler_document_new_from_data          (char            *data,
 							    int              length,
 							    const char      *password,
 							    GError         **error);
+POPPLER_GLIB_EXPORT
 PopplerDocument   *poppler_document_new_from_stream        (GInputStream    *stream,
                                                             goffset          length,
                                                             const char      *password,
                                                             GCancellable    *cancellable,
                                                             GError         **error);
+POPPLER_GLIB_EXPORT
 PopplerDocument   *poppler_document_new_from_gfile         (GFile           *file,
                                                             const char      *password,
                                                             GCancellable    *cancellable,
                                                             GError         **error);
+POPPLER_GLIB_EXPORT
 gboolean           poppler_document_save                   (PopplerDocument *document,
 							    const char      *uri,
 							    GError         **error);
+POPPLER_GLIB_EXPORT
 gboolean           poppler_document_save_a_copy            (PopplerDocument *document,
 							    const char      *uri,
 							    GError         **error);
+POPPLER_GLIB_EXPORT
 gboolean           poppler_document_get_id                 (PopplerDocument *document,
 							    gchar          **permanent_id,
 							    gchar          **update_id);
+POPPLER_GLIB_EXPORT
 int                poppler_document_get_n_pages            (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 PopplerPage       *poppler_document_get_page               (PopplerDocument *document,
 							    int              index);
+POPPLER_GLIB_EXPORT
 PopplerPage       *poppler_document_get_page_by_label      (PopplerDocument *document,
 							    const char      *label);
+POPPLER_GLIB_EXPORT
 gchar             *poppler_document_get_pdf_version_string (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 void               poppler_document_get_pdf_version        (PopplerDocument *document,
 							    guint           *major_version,
 							    guint           *minor_version);
+POPPLER_GLIB_EXPORT
 gchar             *poppler_document_get_title              (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 void               poppler_document_set_title              (PopplerDocument *document,
 							    const gchar     *title);
+POPPLER_GLIB_EXPORT
 gchar             *poppler_document_get_author             (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 void               poppler_document_set_author             (PopplerDocument *document,
 							    const gchar     *author);
+POPPLER_GLIB_EXPORT
 gchar             *poppler_document_get_subject            (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 void               poppler_document_set_subject            (PopplerDocument *document,
 							    const gchar     *subject);
+POPPLER_GLIB_EXPORT
 gchar             *poppler_document_get_keywords           (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 void               poppler_document_set_keywords           (PopplerDocument *document,
                                                             const gchar     *keywords);
+POPPLER_GLIB_EXPORT
 gchar             *poppler_document_get_creator            (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 void               poppler_document_set_creator            (PopplerDocument *document,
                                                             const gchar     *creator);
+POPPLER_GLIB_EXPORT
 gchar             *poppler_document_get_producer           (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 void               poppler_document_set_producer           (PopplerDocument *document,
                                                             const gchar     *producer);
+POPPLER_GLIB_EXPORT
 time_t             poppler_document_get_creation_date      (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 void               poppler_document_set_creation_date      (PopplerDocument *document,
                                                             time_t           creation_date);
+POPPLER_GLIB_EXPORT
 time_t             poppler_document_get_modification_date  (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 void               poppler_document_set_modification_date  (PopplerDocument *document,
                                                             time_t           modification_date);
+POPPLER_GLIB_EXPORT
 gboolean           poppler_document_is_linearized          (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 PopplerPageLayout  poppler_document_get_page_layout        (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 PopplerPageMode    poppler_document_get_page_mode          (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 PopplerPermissions poppler_document_get_permissions        (PopplerDocument *document);
+POPPLER_GLIB_EXPORT
 gchar             *poppler_document_get_metadata           (PopplerDocument *document);
 
 /* Attachments */
+POPPLER_GLIB_EXPORT
 guint              poppler_document_get_n_attachments      (PopplerDocument  *document);
+POPPLER_GLIB_EXPORT
 gboolean           poppler_document_has_attachments        (PopplerDocument  *document);
+POPPLER_GLIB_EXPORT
 GList             *poppler_document_get_attachments        (PopplerDocument  *document);
 
 /* Links */
+POPPLER_GLIB_EXPORT
 PopplerDest       *poppler_document_find_dest              (PopplerDocument  *document,
 							    const gchar      *link_name);
 
 /* Form */
+POPPLER_GLIB_EXPORT
 PopplerFormField  *poppler_document_get_form_field         (PopplerDocument  *document,
 							    gint              id);
 
 /* Interface for getting the Index of a poppler_document */
 #define POPPLER_TYPE_INDEX_ITER                 (poppler_index_iter_get_type ())
+POPPLER_GLIB_EXPORT
 GType             poppler_index_iter_get_type   (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerIndexIter *poppler_index_iter_new        (PopplerDocument   *document);
+POPPLER_GLIB_EXPORT
 PopplerIndexIter *poppler_index_iter_copy       (PopplerIndexIter  *iter);
+POPPLER_GLIB_EXPORT
 void              poppler_index_iter_free       (PopplerIndexIter  *iter);
 
+POPPLER_GLIB_EXPORT
 PopplerIndexIter *poppler_index_iter_get_child  (PopplerIndexIter  *parent);
+POPPLER_GLIB_EXPORT
 gboolean	  poppler_index_iter_is_open    (PopplerIndexIter  *iter);
+POPPLER_GLIB_EXPORT
 PopplerAction    *poppler_index_iter_get_action (PopplerIndexIter  *iter);
+POPPLER_GLIB_EXPORT
 gboolean          poppler_index_iter_next       (PopplerIndexIter  *iter);
 
 /* Interface for getting the Fonts of a poppler_document */
 #define POPPLER_TYPE_FONT_INFO             (poppler_font_info_get_type ())
 #define POPPLER_FONT_INFO(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), POPPLER_TYPE_FONT_INFO, PopplerFontInfo))
 #define POPPLER_IS_FONT_INFO(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), POPPLER_TYPE_FONT_INFO))
+POPPLER_GLIB_EXPORT
 GType             poppler_font_info_get_type       (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerFontInfo  *poppler_font_info_new            (PopplerDocument   *document);
+POPPLER_GLIB_EXPORT
 gboolean          poppler_font_info_scan           (PopplerFontInfo   *font_info,
 						    int                n_pages,
 						    PopplerFontsIter **iter);
+POPPLER_GLIB_EXPORT
 void             poppler_font_info_free            (PopplerFontInfo   *font_info);
 
 #define POPPLER_TYPE_FONTS_ITER                    (poppler_fonts_iter_get_type ())
+POPPLER_GLIB_EXPORT
 GType             poppler_fonts_iter_get_type      (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerFontsIter *poppler_fonts_iter_copy          (PopplerFontsIter  *iter);
+POPPLER_GLIB_EXPORT
 void              poppler_fonts_iter_free          (PopplerFontsIter  *iter);
+POPPLER_GLIB_EXPORT
 const char       *poppler_fonts_iter_get_name      (PopplerFontsIter  *iter);
+POPPLER_GLIB_EXPORT
 const char       *poppler_fonts_iter_get_full_name (PopplerFontsIter  *iter);
+POPPLER_GLIB_EXPORT
 const char       *poppler_fonts_iter_get_substitute_name (PopplerFontsIter *iter);
+POPPLER_GLIB_EXPORT
 const char       *poppler_fonts_iter_get_file_name (PopplerFontsIter  *iter);
+POPPLER_GLIB_EXPORT
 PopplerFontType   poppler_fonts_iter_get_font_type (PopplerFontsIter  *iter);
+POPPLER_GLIB_EXPORT
 const char       *poppler_fonts_iter_get_encoding  (PopplerFontsIter *iter);
+POPPLER_GLIB_EXPORT
 gboolean	  poppler_fonts_iter_is_embedded   (PopplerFontsIter  *iter);
+POPPLER_GLIB_EXPORT
 gboolean	  poppler_fonts_iter_is_subset     (PopplerFontsIter  *iter);
+POPPLER_GLIB_EXPORT
 gboolean          poppler_fonts_iter_next          (PopplerFontsIter  *iter);
 
 /* Interface for getting the Layers of a poppler_document */
 #define POPPLER_TYPE_LAYERS_ITER                   (poppler_layers_iter_get_type ())
+POPPLER_GLIB_EXPORT
 GType              poppler_layers_iter_get_type    (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerLayersIter *poppler_layers_iter_new         (PopplerDocument   *document);
+POPPLER_GLIB_EXPORT
 PopplerLayersIter *poppler_layers_iter_copy        (PopplerLayersIter *iter);
+POPPLER_GLIB_EXPORT
 void               poppler_layers_iter_free        (PopplerLayersIter *iter);
 
+POPPLER_GLIB_EXPORT
 PopplerLayersIter *poppler_layers_iter_get_child   (PopplerLayersIter *parent);
+POPPLER_GLIB_EXPORT
 gchar             *poppler_layers_iter_get_title   (PopplerLayersIter *iter);
+POPPLER_GLIB_EXPORT
 PopplerLayer      *poppler_layers_iter_get_layer   (PopplerLayersIter *iter);
+POPPLER_GLIB_EXPORT
 gboolean           poppler_layers_iter_next        (PopplerLayersIter *iter);
 
 /* Export to ps */
 #define POPPLER_TYPE_PS_FILE             (poppler_ps_file_get_type ())
 #define POPPLER_PS_FILE(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), POPPLER_TYPE_PS_FILE, PopplerPSFile))
 #define POPPLER_IS_PS_FILE(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), POPPLER_TYPE_PS_FILE))
+POPPLER_GLIB_EXPORT
 GType          poppler_ps_file_get_type       (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerPSFile *poppler_ps_file_new            (PopplerDocument *document,
                                                const char      *filename,
                                                int              first_page,
                                                int              n_pages);
+POPPLER_GLIB_EXPORT
 void           poppler_ps_file_set_paper_size (PopplerPSFile   *ps_file,
                                                double           width,
                                                double           height);
+POPPLER_GLIB_EXPORT
 void           poppler_ps_file_set_duplex     (PopplerPSFile   *ps_file,
                                                gboolean         duplex);
+POPPLER_GLIB_EXPORT
 void           poppler_ps_file_free           (PopplerPSFile   *ps_file);
 
 

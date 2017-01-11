@@ -170,127 +170,195 @@ struct _PopplerAnnotCalloutLine
   gdouble  y3;
 };
 
+POPPLER_GLIB_EXPORT
 GType                         poppler_annot_get_type                           (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerAnnotType              poppler_annot_get_annot_type                     (PopplerAnnot *poppler_annot);
+POPPLER_GLIB_EXPORT
 gchar                        *poppler_annot_get_contents                       (PopplerAnnot *poppler_annot);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_set_contents                       (PopplerAnnot *poppler_annot,
 										const gchar  *contents);
+POPPLER_GLIB_EXPORT
 gchar                        *poppler_annot_get_name                           (PopplerAnnot *poppler_annot);
+POPPLER_GLIB_EXPORT
 gchar                        *poppler_annot_get_modified                       (PopplerAnnot *poppler_annot);
+POPPLER_GLIB_EXPORT
 PopplerAnnotFlag              poppler_annot_get_flags                          (PopplerAnnot *poppler_annot);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_set_flags                          (PopplerAnnot *poppler_annot,
 										PopplerAnnotFlag flags);
+POPPLER_GLIB_EXPORT
 PopplerColor                 *poppler_annot_get_color                          (PopplerAnnot *poppler_annot);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_set_color                          (PopplerAnnot *poppler_annot,
 										PopplerColor *poppler_color);
+POPPLER_GLIB_EXPORT
 gint                          poppler_annot_get_page_index                     (PopplerAnnot *poppler_annot);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_get_rectangle                      (PopplerAnnot     *poppler_annot,
 										PopplerRectangle *poppler_rect);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_set_rectangle                      (PopplerAnnot     *poppler_annot,
 										PopplerRectangle *poppler_rect);
 
 /* PopplerAnnotMarkup */
+POPPLER_GLIB_EXPORT
 GType                         poppler_annot_markup_get_type                    (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 gchar                        *poppler_annot_markup_get_label                   (PopplerAnnotMarkup *poppler_annot);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_markup_set_label                   (PopplerAnnotMarkup *poppler_annot,
 										const gchar        *label);
+POPPLER_GLIB_EXPORT
 gboolean                      poppler_annot_markup_has_popup                   (PopplerAnnotMarkup *poppler_annot);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_markup_set_popup                   (PopplerAnnotMarkup *poppler_annot,
 										PopplerRectangle   *popup_rect);
+POPPLER_GLIB_EXPORT
 gboolean                      poppler_annot_markup_get_popup_is_open           (PopplerAnnotMarkup *poppler_annot);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_markup_set_popup_is_open           (PopplerAnnotMarkup *poppler_annot,
 										gboolean            is_open);
+POPPLER_GLIB_EXPORT
 gboolean                      poppler_annot_markup_get_popup_rectangle         (PopplerAnnotMarkup *poppler_annot,
 										PopplerRectangle   *poppler_rect);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_markup_set_popup_rectangle         (PopplerAnnotMarkup *poppler_annot,
                                                                                 PopplerRectangle   *poppler_rect);
+POPPLER_GLIB_EXPORT
 gdouble                       poppler_annot_markup_get_opacity                 (PopplerAnnotMarkup *poppler_annot);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_markup_set_opacity                 (PopplerAnnotMarkup *poppler_annot,
 										gdouble             opacity);
+POPPLER_GLIB_EXPORT
 GDate                        *poppler_annot_markup_get_date                    (PopplerAnnotMarkup *poppler_annot);
+POPPLER_GLIB_EXPORT
 gchar                        *poppler_annot_markup_get_subject                 (PopplerAnnotMarkup *poppler_annot);
+POPPLER_GLIB_EXPORT
 PopplerAnnotMarkupReplyType   poppler_annot_markup_get_reply_to                (PopplerAnnotMarkup *poppler_annot);
+POPPLER_GLIB_EXPORT
 PopplerAnnotExternalDataType  poppler_annot_markup_get_external_data           (PopplerAnnotMarkup *poppler_annot);
 
 /* PopplerAnnotText */
+POPPLER_GLIB_EXPORT
 GType                         poppler_annot_text_get_type                      (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerAnnot                 *poppler_annot_text_new                           (PopplerDocument  *doc,
 										PopplerRectangle *rect);
+POPPLER_GLIB_EXPORT
 gboolean                      poppler_annot_text_get_is_open                   (PopplerAnnotText *poppler_annot);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_text_set_is_open                   (PopplerAnnotText *poppler_annot,
 										gboolean          is_open);
+POPPLER_GLIB_EXPORT
 gchar                        *poppler_annot_text_get_icon                      (PopplerAnnotText *poppler_annot);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_text_set_icon                      (PopplerAnnotText *poppler_annot,
 										const gchar      *icon);
+POPPLER_GLIB_EXPORT
 PopplerAnnotTextState         poppler_annot_text_get_state                     (PopplerAnnotText *poppler_annot);
 
 /* PopplerAnnotTextMarkup */
+POPPLER_GLIB_EXPORT
 GType                         poppler_annot_text_markup_get_type               (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerAnnot                 *poppler_annot_text_markup_new_highlight          (PopplerDocument  *doc,
                                                                                 PopplerRectangle *rect,
                                                                                 GArray           *quadrilaterals);
+POPPLER_GLIB_EXPORT
 PopplerAnnot                 *poppler_annot_text_markup_new_squiggly           (PopplerDocument  *doc,
                                                                                 PopplerRectangle *rect,
                                                                                 GArray           *quadrilaterals);
+POPPLER_GLIB_EXPORT
 PopplerAnnot                 *poppler_annot_text_markup_new_strikeout          (PopplerDocument  *doc,
                                                                                 PopplerRectangle *rect,
                                                                                 GArray           *quadrilaterals);
+POPPLER_GLIB_EXPORT
 PopplerAnnot                 *poppler_annot_text_markup_new_underline          (PopplerDocument  *doc,
                                                                                 PopplerRectangle *rect,
                                                                                 GArray           *quadrilaterals);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_text_markup_set_quadrilaterals     (PopplerAnnotTextMarkup *poppler_annot,
 										GArray                 *quadrilaterals);
+POPPLER_GLIB_EXPORT
 GArray                       *poppler_annot_text_markup_get_quadrilaterals     (PopplerAnnotTextMarkup *poppler_annot);
 
 /* PopplerAnnotFreeText */
+POPPLER_GLIB_EXPORT
 GType                         poppler_annot_free_text_get_type                 (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerAnnotFreeTextQuadding  poppler_annot_free_text_get_quadding             (PopplerAnnotFreeText *poppler_annot);
+POPPLER_GLIB_EXPORT
 PopplerAnnotCalloutLine      *poppler_annot_free_text_get_callout_line         (PopplerAnnotFreeText *poppler_annot);
 
 /* PopplerAnnotFileAttachment */
+POPPLER_GLIB_EXPORT
 GType                         poppler_annot_file_attachment_get_type           (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerAttachment            *poppler_annot_file_attachment_get_attachment     (PopplerAnnotFileAttachment *poppler_annot);
+POPPLER_GLIB_EXPORT
 gchar                        *poppler_annot_file_attachment_get_name           (PopplerAnnotFileAttachment *poppler_annot);
 
 /* PopplerAnnotMovie */
+POPPLER_GLIB_EXPORT
 GType                         poppler_annot_movie_get_type                     (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 gchar                        *poppler_annot_movie_get_title                    (PopplerAnnotMovie *poppler_annot);
+POPPLER_GLIB_EXPORT
 PopplerMovie                 *poppler_annot_movie_get_movie                    (PopplerAnnotMovie *poppler_annot);
 
 /* PopplerAnnotScreen */
+POPPLER_GLIB_EXPORT
 GType                         poppler_annot_screen_get_type                    (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerAction                *poppler_annot_screen_get_action                  (PopplerAnnotScreen *poppler_annot);
 
 /* PopplerAnnotLine */
+POPPLER_GLIB_EXPORT
 GType                         poppler_annot_line_get_type                      (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerAnnot                 *poppler_annot_line_new                           (PopplerDocument  *doc,
                                                                                 PopplerRectangle *rect,
                                                                                 PopplerPoint     *start,
                                                                                 PopplerPoint     *end);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_line_set_vertices                  (PopplerAnnotLine *poppler_annot,
 										PopplerPoint     *start,
 										PopplerPoint     *end);
 
 /* PopplerAnnotCalloutLine */
+POPPLER_GLIB_EXPORT
 GType                         poppler_annot_callout_line_get_type              (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerAnnotCalloutLine      *poppler_annot_callout_line_new                   (void);
+POPPLER_GLIB_EXPORT
 PopplerAnnotCalloutLine      *poppler_annot_callout_line_copy                  (PopplerAnnotCalloutLine *callout);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_callout_line_free                  (PopplerAnnotCalloutLine *callout);
 
 /* PopplerAnnotCircle */
+POPPLER_GLIB_EXPORT
 GType                         poppler_annot_circle_get_type                    (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerAnnot                 *poppler_annot_circle_new                         (PopplerDocument    *doc,
                                                                                 PopplerRectangle   *rect);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_circle_set_interior_color          (PopplerAnnotCircle *poppler_annot,
 										PopplerColor       *poppler_color);
+POPPLER_GLIB_EXPORT
 PopplerColor                 *poppler_annot_circle_get_interior_color          (PopplerAnnotCircle *poppler_annot);
 
 /* PopplerAnnotGeometry */
+POPPLER_GLIB_EXPORT
 GType                         poppler_annot_square_get_type                    (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 PopplerAnnot                 *poppler_annot_square_new                         (PopplerDocument    *doc,
                                                                                 PopplerRectangle   *rect);
+POPPLER_GLIB_EXPORT
 void                          poppler_annot_square_set_interior_color          (PopplerAnnotSquare *poppler_annot,
 										PopplerColor       *poppler_color);
+POPPLER_GLIB_EXPORT
 PopplerColor                 *poppler_annot_square_get_interior_color          (PopplerAnnotSquare *poppler_annot);
 
 G_END_DECLS

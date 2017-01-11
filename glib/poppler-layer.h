@@ -29,13 +29,20 @@ G_BEGIN_DECLS
 #define POPPLER_LAYER(obj)    (G_TYPE_CHECK_INSTANCE_CAST ((obj), POPPLER_TYPE_LAYER, PopplerLayer))
 #define POPPLER_IS_LAYER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), POPPLER_TYPE_LAYER))
 
+POPPLER_GLIB_EXPORT
 GType        poppler_layer_get_type                  (void) G_GNUC_CONST;
 
+POPPLER_GLIB_EXPORT
 const gchar *poppler_layer_get_title                 (PopplerLayer *layer);
+POPPLER_GLIB_EXPORT
 gboolean     poppler_layer_is_visible                (PopplerLayer *layer);
+POPPLER_GLIB_EXPORT
 void         poppler_layer_show                      (PopplerLayer *layer);
+POPPLER_GLIB_EXPORT
 void         poppler_layer_hide                      (PopplerLayer *layer);
+POPPLER_GLIB_EXPORT
 gboolean     poppler_layer_is_parent                 (PopplerLayer *layer);
+POPPLER_GLIB_EXPORT
 gint         poppler_layer_get_radio_button_group_id (PopplerLayer *layer);
 
 G_END_DECLS

@@ -55,13 +55,19 @@ typedef gboolean (*PopplerMediaSaveFunc) (const gchar  *buf,
 					  gpointer      data,
 					  GError      **error);
 
+POPPLER_GLIB_EXPORT
 GType        poppler_media_get_type         (void) G_GNUC_CONST;
+POPPLER_GLIB_EXPORT
 gboolean     poppler_media_is_embedded      (PopplerMedia        *poppler_media);
+POPPLER_GLIB_EXPORT
 const gchar *poppler_media_get_filename     (PopplerMedia        *poppler_media);
+POPPLER_GLIB_EXPORT
 const gchar *poppler_media_get_mime_type    (PopplerMedia        *poppler_media);
+POPPLER_GLIB_EXPORT
 gboolean     poppler_media_save             (PopplerMedia        *poppler_media,
 					     const char          *filename,
 					     GError             **error);
+POPPLER_GLIB_EXPORT
 gboolean     poppler_media_save_to_callback (PopplerMedia        *poppler_media,
 					     PopplerMediaSaveFunc save_func,
 					     gpointer             user_data,

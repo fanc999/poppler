@@ -58,52 +58,85 @@ typedef enum
   POPPLER_FORM_CHOICE_LIST
 } PopplerFormChoiceType;
 
+POPPLER_GLIB_EXPORT
 GType                 poppler_form_field_get_type                (void) G_GNUC_CONST;
 
+POPPLER_GLIB_EXPORT
 PopplerFormFieldType  poppler_form_field_get_field_type          (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gint                  poppler_form_field_get_id                  (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gdouble               poppler_form_field_get_font_size           (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gboolean              poppler_form_field_is_read_only            (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gchar                *poppler_form_field_get_partial_name        (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gchar                *poppler_form_field_get_mapping_name        (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gchar                *poppler_form_field_get_name                (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 PopplerAction        *poppler_form_field_get_action              (PopplerFormField *field);
 
 /* Button Field */
+POPPLER_GLIB_EXPORT
 PopplerFormButtonType poppler_form_field_button_get_button_type  (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gboolean              poppler_form_field_button_get_state        (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 void                  poppler_form_field_button_set_state        (PopplerFormField *field,
 								  gboolean          state);
 
 /* Text Field */
+POPPLER_GLIB_EXPORT
 PopplerFormTextType   poppler_form_field_text_get_text_type      (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gchar                *poppler_form_field_text_get_text           (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 void                  poppler_form_field_text_set_text           (PopplerFormField *field,
 								  const gchar      *text);
+POPPLER_GLIB_EXPORT
 gint                  poppler_form_field_text_get_max_len        (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gboolean              poppler_form_field_text_do_spell_check     (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gboolean              poppler_form_field_text_do_scroll          (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gboolean              poppler_form_field_text_is_rich_text       (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gboolean              poppler_form_field_text_is_password        (PopplerFormField *field);
 
 /* Choice Field */
+POPPLER_GLIB_EXPORT
 PopplerFormChoiceType poppler_form_field_choice_get_choice_type  (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gboolean              poppler_form_field_choice_is_editable      (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gboolean           poppler_form_field_choice_can_select_multiple (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gboolean              poppler_form_field_choice_do_spell_check   (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gboolean              poppler_form_field_choice_commit_on_change (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gint                  poppler_form_field_choice_get_n_items      (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 gchar                *poppler_form_field_choice_get_item         (PopplerFormField *field,
 								  gint              index);
+POPPLER_GLIB_EXPORT
 gboolean              poppler_form_field_choice_is_item_selected (PopplerFormField *field,
 								  gint              index);
+POPPLER_GLIB_EXPORT
 void                  poppler_form_field_choice_select_item      (PopplerFormField *field,
 								  gint              index);
+POPPLER_GLIB_EXPORT
 void                  poppler_form_field_choice_unselect_all     (PopplerFormField *field);
+POPPLER_GLIB_EXPORT
 void                  poppler_form_field_choice_toggle_item      (PopplerFormField *field,
 								  gint              index);
+POPPLER_GLIB_EXPORT
 void                  poppler_form_field_choice_set_text         (PopplerFormField *field,
 								  const gchar      *text);
+POPPLER_GLIB_EXPORT
 gchar                *poppler_form_field_choice_get_text         (PopplerFormField *field);
 
 G_END_DECLS

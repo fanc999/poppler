@@ -21,8 +21,23 @@
 
 #include <glib-object.h>
 
+#if defined(G_OS_WIN32)
+#  define LIB_EXPORT __declspec(dllexport)
+#  define LIB_IMPORT __declspec(dllimport)
+#else
+#  define LIB_EXPORT
+#  define LIB_IMPORT
+#endif
+
+#if defined(poppler_glib_EXPORTS)
+#  define POPPLER_GLIB_EXPORT LIB_EXPORT
+#else
+#  define POPPLER_GLIB_EXPORT LIB_IMPORT
+#endif
+
 G_BEGIN_DECLS
 
+POPPLER_GLIB_EXPORT
 GQuark poppler_error_quark (void);
 
 #define POPPLER_ERROR poppler_error_quark ()
@@ -220,7 +235,9 @@ typedef enum
   POPPLER_BACKEND_CAIRO
 } PopplerBackend;
 
+POPPLER_GLIB_EXPORT
 PopplerBackend poppler_get_backend (void);
+POPPLER_GLIB_EXPORT
 const char *   poppler_get_version (void);
 
 G_END_DECLS
