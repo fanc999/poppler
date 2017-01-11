@@ -50,8 +50,14 @@ macro(gir_add_introspections introspections_girs)
     # Reuse the LIBTOOL variable from by automake if it's set
     set(_gir_libtool "--no-libtool")
 
+    if (MSVC)
+      set (INTROSPECTION_SCANNER_CMD python ${INTROSPECTION_SCANNER})
+    else (MSVC)
+      set (INTROSPECTION_SCANNER_CMD ${INTROSPECTION_SCANNER})
+    endif (MSVC)
+
     add_custom_command(
-      COMMAND ${INTROSPECTION_SCANNER}
+      COMMAND ${INTROSPECTION_SCANNER_CMD}
               ${INTROSPECTION_SCANNER_ARGS}
               --namespace=${_gir_namespace}
               --nsversion=${_gir_version}
