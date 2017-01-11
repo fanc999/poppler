@@ -35,9 +35,15 @@ set(poppler_glib_public_headers
 
 find_program(GLIB2_MKENUMS glib-mkenums)
 
+if (WIN32)
+set(GLIB2_MKENUMS_CMD perl ${GLIB2_MKENUMS})
+else (WIN32)
+set(GLIB2_MKENUMS_CMD ${GLIB2_MKENUMS})
+endif (WIN32)
+
 add_custom_command(
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/poppler-enums.h
-  COMMAND ${GLIB2_MKENUMS}
+  COMMAND ${GLIB2_MKENUMS_CMD}
   ARGS
     --template poppler-enums.h.template
     ${poppler_glib_public_headers} > ${CMAKE_CURRENT_BINARY_DIR}/poppler-enums.h
@@ -48,7 +54,7 @@ add_custom_command(
 
 add_custom_command(
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/poppler-enums.c
-  COMMAND ${GLIB2_MKENUMS}
+  COMMAND ${GLIB2_MKENUMS_CMD}
   ARGS
     --template poppler-enums.c.template
     ${poppler_glib_public_headers} > ${CMAKE_CURRENT_BINARY_DIR}/poppler-enums.c
