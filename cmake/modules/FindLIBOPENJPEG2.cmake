@@ -26,5 +26,31 @@ else ()
   pkg_check_modules(LIBOPENJPEG2 libopenjp2)
   if (LIBOPENJPEG2_FOUND)
     add_definitions(-DUSE_OPENJPEG2)
-  endif ()
+  else(LIBOPENJPEG2_FOUND)
+
+    find_path (LIBOPENJPEG2_INCLUDE_DIR openjpeg.h PATH_SUFFIXES openjpeg-2.1)
+    find_library(LIBOPENJPEG2_LIBRARIES openjp2)
+    if(LIBOPENJPEG2_INCLUDE_DIR AND LIBOPENJPEG2_LIBRARIES)
+
+      set(LIBOPENJPEG2_INCLUDE_DIRS ${LIBOPENJPEG2_INCLUDE_DIR})
+
+      check_cxx_source_compiles("
+#include <openjpeg.h>
+int main()
+{
+  int foo = OPJ_DPARAMETERS_IGNORE_PCLR_CMAP_CDEF_FLAG;
+  return 0;
+}"
+        WITH_OPENJPEG_IGNORE_PCLR_CMAP_CDEF_FLAG)
+
+      set(CMAKE_REQUIRED_INCLUDES)
+      set(CMAKE_REQUIRED_LIBRARIES)
+
+      set(LIBOPENJPEG2_FOUND TRUE)
+    endif(LIBOPENJPEG2_INCLUDE_DIR AND LIBOPENJPEG2_LIBRARIES)
+
+    include(FindPackageHandleStandardArgs)
+    find_package_handle_standard_args(LibOpenJPEG2 DEFAULT_MSG LIBOPENJPEG2_LIBRARIES LIBOPENJPEG2_INCLUDE_DIR)
+
+  endif (LIBOPENJPEG2_FOUND)
 endif ()
