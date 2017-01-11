@@ -18,6 +18,11 @@
 
 #ifdef CAIRO_HAS_WIN32_SURFACE
 
+#ifdef _MSC_VER
+#define strcasecmp _stricmp
+#define strncasecmp _strnicmp
+#endif
+
 #include <cairo-win32.h>
 
 void win32SetupPrinter(GooString *printer, GooString *printOpt,
